@@ -30,6 +30,7 @@ export default function FormText(props) {
         let copyText = document.getElementById("myBox");
         copyText.select();
         navigator.clipboard.writeText(copyText.value);
+        document.getSelection().removeAllRanges();
         props.showAlert("copied Text", "success");
     }
     const [text, setText] = useState("");
